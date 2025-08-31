@@ -7,7 +7,7 @@ type FormPropsType = {
 const Form = ({ city, setCity, getWeather }: FormPropsType) => {
   return (
     <form onSubmit={getWeather}>
-      <input type="text" name="city" placeholder="都市名" onChange={e => setCity(e.target.value)} value={city}/>
+      <input type="text" name="city" placeholder="Search your city here..." onChange={e => setCity(e.target.value)} value={city}/>
       <button type="submit">Get Weather</button>
     </form>
   );
