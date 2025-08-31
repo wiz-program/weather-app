@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
 
 html {
     font-size: 62.5%;
@@ -13,6 +13,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* App.js */
@@ -22,60 +23,243 @@ body {
    display: flex;
    justify-content: center;
    align-items: center; 
-   background: url("./background-image.jpg") center center no-repeat;
+   background: linear-gradient(135deg, rgba(0,0,0,0.2), rgba(0,0,0,0.05)), url("./nature-background-1.jpg") center center no-repeat;
    background-size: cover;
+   position: relative;
+   overflow: hidden;
+   min-height: 100vh;
+}
+
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(34, 139, 34, 0.1), rgba(70, 130, 180, 0.1));
+    pointer-events: none;
 }
 
 .container {
-    width: 50vw;
+    width: 90vw;
+    max-width: 500px;
     text-align: center;
-    padding: 40px 20px;
-    border-radius: 15px;
+    padding: 50px 30px;
+    border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: 4px 4px 13px 5px rgba(0,0,0,0.25);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 4px 16px rgba(34, 139, 34, 0.1);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    margin: 20px;
 }
-@media only screen and (max-width: 700px) {
-    .container{
-        width: 80vw;
+
+.container:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        0 6px 20px rgba(34, 139, 34, 0.15);
+}
+
+/* レスポンシブ対応 */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 95vw;
+        padding: 40px 20px;
+        margin: 10px;
+    }
+    
+    .wrapper {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 98vw;
+        padding: 30px 15px;
+        border-radius: 16px;
+    }
+    
+    html {
+        font-size: 56.25%; /* 9px base */
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .container {
+        padding: 25px 12px;
+    }
+    
+    html {
+        font-size: 50%; /* 8px base */
     }
 }
 
 /* Title.js */
 h1 {
-    font-weight: 400;
-    margin: 0px 0 50px;
+    font-weight: 600;
+    margin: 0 0 50px;
+    font-size: 3.6rem;
+    background: linear-gradient(135deg, #228B22, #4682B4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #228B22, #4682B4);
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 3.2rem;
+        margin: 0 0 40px;
+    }
+    
+    h1::after {
+        width: 60px;
+        bottom: -10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 2.8rem;
+        margin: 0 0 30px;
+    }
 }
 
 /* Form.js */
+.weather-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+
 input[type="text"] {
-    background-color: transparent;
-    border: 0;
-    border-bottom: solid 1px #f15186;
-    width: 40%;
-    padding-bottom: 4px;
-    color: #fff !important;
-    font-weight: lighter;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    margin-right: 20px;
-    font-size: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    width: 100%;
+    padding: 18px 20px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus {
+    border-color: #228B22;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 4px rgba(34, 139, 34, 0.15);
+    transform: translateY(-2px);
 }
 
 button {
-    width: 40%;
-    border: 0;
-    padding: 8px 20px;
-    margin: 0 2px;
-    border-radius: 2px;
+    background: linear-gradient(135deg, #228B22, #4682B4);
+    border: none;
+    padding: 18px 36px;
+    border-radius: 12px;
     letter-spacing: 1px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
     cursor: pointer;
-    background-color: #f15186;
     color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(34, 139, 34, 0.3);
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
 }
 
 button:hover {
-    opacity: 0.9
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(34, 139, 34, 0.4);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+@media only screen and (max-width: 768px) {
+    .weather-form {
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    
+    input[type="text"] {
+        padding: 16px 18px;
+        font-size: 1.5rem;
+    }
+    
+    button {
+        padding: 16px 32px;
+        font-size: 1.5rem;
+        min-width: 140px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .input-group {
+        max-width: 280px;
+    }
+    
+    input[type="text"] {
+        padding: 14px 16px;
+        font-size: 1.4rem;
+    }
+    
+    button {
+        padding: 14px 28px;
+        font-size: 1.4rem;
+        min-width: 120px;
+    }
 }
 
 *:focus {
@@ -83,44 +267,188 @@ button:hover {
 }
 
 /* Results.js */
-.results-city {
-    font-size: 4rem;
+.weather-results {
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .results-country {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.results-city {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .results-temp {
-    font-size: 6rem;
-    margin: 10px 0;
-    color: #f15186;
+    font-size: 6.4rem;
+    font-weight: 700;
+    margin: 20px 0;
+    background: linear-gradient(135deg, #228B22, #4682B4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    position: relative;
 }
 
 .results-temp > span {
-    font-size: 3rem;
-    color: #333;
+    font-size: 3.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    margin-left: 8px;
 }
 
 .results-condition {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    color: #fff;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.results-condition img {
+    width: 44px;
+    height: 44px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+@media only screen and (max-width: 768px) {
+    .results-city {
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .results-temp {
+        font-size: 5.6rem;
+        margin: 15px 0;
+    }
+    
+    .results-temp > span {
+        font-size: 2.8rem;
+    }
+    
+    .results-condition {
+        font-size: 2rem;
+        padding: 16px;
+        gap: 10px;
+    }
+    
+    .results-condition img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .results-country {
+        font-size: 1.4rem;
+    }
+    
+    .results-city {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .results-temp {
+        font-size: 4.8rem;
+        margin: 12px 0;
+    }
+    
+    .results-temp > span {
+        font-size: 2.4rem;
+    }
+    
+    .results-condition {
+        font-size: 1.8rem;
+        padding: 14px;
+        gap: 8px;
+    }
+    
+    .results-condition img {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 /* Loading.js */
 .loading {
-    border: 4px solid #f15186;
-    border-top: 4px solid #ffffff;
+    border: 3px solid rgba(34, 139, 34, 0.2);
+    border-top: 3px solid #228B22;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    margin: auto;
-    animation: spin 2s linear infinite;
+    width: 50px;
+    height: 50px;
+    margin: 40px auto;
+    animation: spin 1.2s linear infinite;
 }
 
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 追加のアニメーション */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.results-temp {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* 横画面対応 */
+@media only screen and (orientation: landscape) and (max-height: 600px) {
+    .wrapper {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 30px 25px;
+        margin: 10px;
+    }
+    
+    h1 {
+        margin: 0 0 30px;
+        font-size: 3rem;
+    }
+    
+    .weather-form {
+        margin-bottom: 25px;
+        gap: 15px;
+    }
+    
+    .results-temp {
+        font-size: 5rem;
+        margin: 15px 0;
+    }
 }

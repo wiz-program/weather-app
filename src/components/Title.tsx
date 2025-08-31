@@ -1,6 +1,8 @@
 const Title = () => {
-  return(
-    <h1>React World Weather</h1>
+  return (
+    <>
+      <h1>Weather App</h1>
+    </>
   );
 };
 
