@@ -1,153 +1,153 @@
-# React TypeScript Weather App
+# React TypeScript 天気アプリ
 
-A modern weather application built with React and TypeScript that displays real-time weather information using the WeatherAPI.com service.
+WeatherAPI.comサービスを使用してリアルタイムの天気情報を表示する、ReactとTypeScriptで構築されたモダンな天気アプリケーションです。
 
-## 🌟 Features
+## 🌟 機能
 
-- **Real-time Weather Data**: Get current weather information for any city worldwide
-- **Modern UI**: Beautiful, responsive design with glassmorphism effects
-- **TypeScript**: Full type safety and better development experience
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
-- **Fast Performance**: Optimized React components with efficient rendering
+- **リアルタイム天気データ**: 世界中の任意の都市の現在の天気情報を取得
+- **モダンUI**: ガラスモーフィズム効果を使用した美しいレスポンシブデザイン
+- **TypeScript**: 完全な型安全性と優れた開発体験
+- **レスポンシブデザイン**: デスクトップ、タブレット、モバイルデバイスで完璧に動作
+- **高速パフォーマンス**: 効率的なレンダリングを備えた最適化されたReactコンポーネント
 
-## 🚀 Live Demo
+## 🚀 ライブデモ
 
-**[View Live App](https://wiz-program.github.io/weather-app)**
+**[ライブアプリを見る](https://wiz-program.github.io/weather-app)**
 
-## 🛠️ Technologies Used
+## 🛠️ 使用技術
 
-- **React 18** - Modern React with hooks and functional components
-- **TypeScript** - Type-safe JavaScript development
-- **WeatherAPI.com** - Real-time weather data service
-- **CSS3** - Modern styling with glassmorphism effects
-- **GitHub Pages** - Free hosting and deployment
+- **React 18** - フックと関数コンポーネントを使用したモダンなReact
+- **TypeScript** - 型安全なJavaScript開発
+- **WeatherAPI.com** - リアルタイム天気データサービス
+- **CSS3** - ガラスモーフィズム効果を使用したモダンスタイリング
+- **GitHub Pages** - 無料ホスティングとデプロイ
 
-## 📋 Prerequisites
+## 📋 前提条件
 
-- Node.js (version 14 or higher)
-- npm or yarn package manager
+- Node.js (バージョン14以上)
+- npmまたはyarnパッケージマネージャー
 - Git
 
-## 🔧 Installation
+## 🔧 インストール
 
-1. **Clone the repository**:
+1. **リポジトリをクローン**:
 ```bash
 git clone https://github.com/wiz-program/weather-app.git
 cd react-typescript-weather-app
 ```
 
-2. **Install dependencies**:
+2. **依存関係をインストール**:
 ```bash
 npm install
 ```
 
-3. **Start the development server**:
+3. **開発サーバーを起動**:
 ```bash
 npm start
 ```
 
-The app will open at [http://localhost:3000](http://localhost:3000).
+アプリは [http://localhost:3000](http://localhost:3000) で開きます。
 
-## 📱 Usage
+## 📱 使用方法
 
-1. **Enter a city name** in the input field
-2. **Click "Get Weather"** or press Enter
-3. **View the weather information** including:
-   - City and country name
-   - Current temperature in Celsius
-   - Weather condition with icon
-   - Real-time updates
+1. **入力フィールドに都市名を入力**
+2. **「Get Weather」をクリック**またはEnterキーを押す
+3. **天気情報を確認**:
+   - 都市名と国名
+   - 現在の気温（摂氏）
+   - 天気状態とアイコン
+   - リアルタイム更新
 
-## 🚀 Deployment
+## 🚀 デプロイ
 
-This project is configured for automatic GitHub Pages deployment.
+このプロジェクトは自動GitHub Pagesデプロイ用に設定されています。
 
-### Deploy to GitHub Pages
+### GitHub Pagesへのデプロイ
 
-1. **Update the homepage field** in `package.json` with your GitHub username:
+1. **package.jsonのhomepageフィールドを更新**:
 ```json
 "homepage": "https://wiz-program.github.io/weather-app"
 ```
 
-2. **Deploy the app**:
+2. **アプリをデプロイ**:
 ```bash
 npm run deploy
 ```
 
-3. **Enable GitHub Pages** in your repository settings:
-   - Go to Settings > Pages
-   - Select "Deploy from a branch"
-   - Choose the `gh-pages` branch
-   - Save the settings
+3. **リポジトリ設定でGitHub Pagesを有効化**:
+   - Settings > Pagesに移動
+   - 「Deploy from a branch」を選択
+   - 「gh-pages」ブランチを選択
+   - 設定を保存
 
-Your app will be available at: `https://wiz-program.github.io/weather-app`
+アプリは以下で利用可能になります: `https://wiz-program.github.io/weather-app`
 
-## 📜 Available Scripts
+## 📜 利用可能なスクリプト
 
-- `npm start` - Runs the app in development mode
-- `npm run build` - Builds the app for production
-- `npm test` - Launches the test runner
-- `npm run eject` - Ejects from Create React App
-- `npm run deploy` - Deploys the app to GitHub Pages
+- `npm start` - 開発モードでアプリを実行
+- `npm run build` - 本番用にアプリをビルド
+- `npm test` - テストランナーを起動
+- `npm run eject` - Create React Appからイジェクト
+- `npm run deploy` - GitHub Pagesにアプリをデプロイ
 
-## 🔧 Configuration
+## 🔧 設定
 
-### Environment Variables
+### 環境変数
 
-Create a `.env.local` file in the root directory:
+ルートディレクトリに`.env.local`ファイルを作成:
 
 ```env
 REACT_APP_WEATHER_API_KEY=your_weather_api_key_here
 ```
 
-### API Configuration
+### API設定
 
-This app uses [WeatherAPI.com](https://www.weatherapi.com/) for weather data. You'll need to:
+このアプリは[WeatherAPI.com](https://www.weatherapi.com/)の天気データを使用しています。以下が必要です:
 
-1. Sign up for a free account at WeatherAPI.com
-2. Get your API key
-3. Add it to your environment variables
+1. WeatherAPI.comで無料アカウントにサインアップ
+2. APIキーを取得
+3. 環境変数に追加
 
-## 🐛 Troubleshooting
+## 🐛 トラブルシューティング
 
-### Common Issues
+### よくある問題
 
-1. **White screen on GitHub Pages**:
-   - Check if the `homepage` field in `package.json` is correct
-   - Ensure the `gh-pages` branch exists
-   - Wait a few minutes for the deployment to complete
+1. **GitHub Pagesで白い画面**:
+   - package.jsonの`homepage`フィールドが正しいか確認
+   - `gh-pages`ブランチが存在するか確認
+   - デプロイ完了まで数分待つ
 
-2. **API errors**:
-   - Verify your API key is correct
-   - Check your API usage limits
-   - Ensure the city name is valid
+2. **APIエラー**:
+   - APIキーが正しいか確認
+   - API使用制限を確認
+   - 都市名が有効か確認
 
-3. **Build errors**:
-   - Clear the `node_modules` folder and reinstall dependencies
-   - Check for TypeScript compilation errors
+3. **ビルドエラー**:
+   - `node_modules`フォルダをクリアして依存関係を再インストール
+   - TypeScriptコンパイルエラーを確認
 
-## 📄 License
+## 📄 ライセンス
 
-This project is open source and available under the [MIT License](LICENSE).
+このプロジェクトはオープンソースで、[MIT License](LICENSE)の下で利用可能です。
 
-## 🤝 Contributing
+## 🤝 貢献
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+貢献を歓迎します！プルリクエストを自由に送信してください。
 
-## 📞 Support
+## 📞 サポート
 
-If you encounter any issues or have questions, please:
+問題が発生した場合や質問がある場合は:
 
-1. Check the [troubleshooting section](#-troubleshooting)
-2. Search existing [issues](https://github.com/wiz-program/weather-app/issues)
-3. Create a new issue with detailed information
+1. [トラブルシューティングセクション](#-トラブルシューティング)を確認
+2. 既存の[issues](https://github.com/wiz-program/weather-app/issues)を検索
+3. 詳細情報を含む新しいissueを作成
 
-## 🙏 Acknowledgments
+## 🙏 謝辞
 
-- [WeatherAPI.com](https://www.weatherapi.com/) for providing weather data
-- [Create React App](https://create-react-app.dev/) for the project setup
-- [React](https://reactjs.org/) team for the amazing framework
+- 天気データを提供してくださった[WeatherAPI.com](https://www.weatherapi.com/)
+- プロジェクトセットアップを提供してくださった[Create React App](https://create-react-app.dev/)
+- 素晴らしいフレームワークを提供してくださった[React](https://reactjs.org/)チーム
 
 ---
 
-**Made with ❤️ by [wiz-program](https://github.com/wiz-program)**
+**❤️ [wiz-program](https://github.com/wiz-program)によって作成**
