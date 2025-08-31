@@ -12,7 +12,7 @@ A modern weather application built with React and TypeScript that displays real-
 
 ## 🚀 Live Demo
 
-**[View Live App](https://wiz-program.github.io/react-typescript-weather-app)**
+**[View Live App](https://wiz-program.github.io/weather-app)**
 
 ## 🛠️ Technologies Used
 
@@ -32,7 +32,7 @@ A modern weather application built with React and TypeScript that displays real-
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/wiz-program/react-typescript-weather-app.git
+git clone https://github.com/wiz-program/weather-app.git
 cd react-typescript-weather-app
 ```
 
@@ -66,7 +66,7 @@ This project is configured for automatic GitHub Pages deployment.
 
 1. **Update the homepage field** in `package.json` with your GitHub username:
 ```json
-"homepage": "https://wiz-program.github.io/react-typescript-weather-app"
+"homepage": "https://wiz-program.github.io/weather-app"
 ```
 
 2. **Deploy the app**:
@@ -80,7 +80,7 @@ npm run deploy
    - Choose the `gh-pages` branch
    - Save the settings
 
-Your app will be available at: `https://wiz-program.github.io/react-typescript-weather-app`
+Your app will be available at: `https://wiz-program.github.io/weather-app`
 
 ## 📜 Available Scripts
 
@@ -139,7 +139,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 If you encounter any issues or have questions, please:
 
 1. Check the [troubleshooting section](#-troubleshooting)
-2. Search existing [issues](https://github.com/wiz-program/react-typescript-weather-app/issues)
+2. Search existing [issues](https://github.com/wiz-program/weather-app/issues)
 3. Create a new issue with detailed information
 
 ## 🙏 Acknowledgments
