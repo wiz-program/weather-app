@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-typescript-weather-app/static/css/main.a6f41179.css",
+    "main.js": "/react-typescript-weather-app/static/js/main.2b22704d.js",
+    "static/media/background-image.jpg": "/react-typescript-weather-app/static/media/background-image.4f6fce9b4084f82de300.jpg",
+    "index.html": "/react-typescript-weather-app/index.html",
+    "main.a6f41179.css.map": "/react-typescript-weather-app/static/css/main.a6f41179.css.map",
+    "main.2b22704d.js.map": "/react-typescript-weather-app/static/js/main.2b22704d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6f41179.css",
+    "static/js/main.2b22704d.js"
+  ]
+}
